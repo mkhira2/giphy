@@ -1,10 +1,87 @@
+$irishGreen: #009900;
+
 * {
 	font-family: Helvetica, Arial, sans-serif;
 	box-sizing: border-box;
 }
 
 h1 {
-	font-size: 50px;
+	font-size: 100px;
 	text-align: center;
-	color: cadetblue;
+	color: $irishGreen;
+}
+
+img {
+	max-width: 100%
+}
+
+.hidden {
+	display: none;
+}
+
+.strip {
+	position: fixed;
+	bottom: 0;
+	overflow: auto;
+	white-space: nowrap;
+	border: 1px solid $irishGreen;
+}
+
+.single-gif {
+	width: 15%;
+	display: inline-block;
+}
+
+.single-gif.active {
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,0.5);
+
+
+	.image-wrapper {
+	    position: fixed;
+	    left: 50%;
+	    top: 50%;
+	    transform: translate(-50%,-50%);
+	    box-shadow: 0 0 10px 3px $irishGreen;
+		cursor: pointer;
+
+	    .imageAndButtons {
+	    	position: relative;
+
+	    	.close-button {
+	    		position: absolute;
+	    		top: 0;
+	    		right: 0;
+	    		position: absolute;
+	    		top: -10px;
+	    		right: -10px;
+	    		border-radius: 50%;
+	    		width: 25px;
+	    		height: 25px;
+	    		background: #ddd;
+	    		border: none;
+	    		color: $irishGreen;
+	    		cursor: pointer;
+	    	}
+
+	    	.next {
+	    		right: -25px;    
+    		    transform: translate(100%,-50%);
+	    	}
+	    	.previous {
+	    		left: -25px;
+	    		transform: translate(-100%,-50%); 
+	    	}
+	    	.arrow {
+	    		position: absolute;
+	    		top: 50%;
+	    		font-size: 72px;
+	    		color: $irishGreen;
+	    	}
+	    }
+	}
 }

@@ -9,13 +9,17 @@ const app = function() {
     var GifRouter = Backbone.Router.extend({
         routes: {
             "gifs/strip": "handleStrip",
-            "gifs/detail:id": "handleDetail"
+            "gifs/detail:id": "handleDetail",
+            "*catchall": "redirect"
         },
         handleStrip: function() {
         	ReactDOM.render(<StripView />, document.querySelector('.container'))
         },
         handleDetail: function() {
         	ReactDOM.render(<DetailView />, document.querySelector('.container'))
+        },
+        redirect: function() {
+            location.hash = "gifs/strip"
         }
     })
     new GifRouter()
